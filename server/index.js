@@ -16,7 +16,7 @@ const port = 3000;
 // Connect to MongoDB
 async function connectToDB() {
     try {
-        await mongoose.connect('mongodb+srv://anish:Anish2003%40@cluster0.tdw5urf.mongodb.net/stock', {
+        await mongoose.connect('process.env.MONGO_URL', {
             dbName: 'stock'
         });
         console.log('Connected to MongoDB');
