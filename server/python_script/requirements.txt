@@ -1,0 +1,8 @@
+google.generativeai
+yfinance==0.2.33
+praw==7.7.1
+pandas_stubs==1.2.0.58
+schedule==1.2.1
+pandas==2.1.4
+protobuf==4.25.1
+python-dotenv==1.0.0

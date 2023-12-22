@@ -2,6 +2,7 @@ import React from 'react';
 import GithubImage from '../assets/github.png';
 
 const Heading = () => {
+
   return (
     <div style={{ margin: '10px', fontWeight: 'bolder', fontSize: '30px', opacity: '1', fontFamily: 'Inter', display: 'flex', alignItems: 'center', flexDirection: 'column', position: 'relative' }}>
       <div>
@@ -11,7 +12,8 @@ const Heading = () => {
         <span className='underline' style={{ margin: '10px', color: '#a9792b', fontSize: '60px', fontWeight: 400, letterSpacing: '-0.05em' }}>
           Based
         </span>
-        <img style={{ width: '5%', position: 'absolute', top: 0, right: 0 }} src={GithubImage} alt='Your Image' />
+        <a href="https://github.com/AnishSharma22/REDDIT-STOCK-RECOMMENDER"><img  style={{ width: '5%', position: 'absolute', top: 0, right: 0 }} src={GithubImage} alt='Your Image' /></a>
+        
       </div>
 
       <div>

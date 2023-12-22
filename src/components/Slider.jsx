@@ -1,8 +1,6 @@
 import React from 'react';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import axios from 'axios'; 
-import './slider.css'
+import '../assets/slider.css'
 
 
 const Slider = ({ setStockData }) => { // Destructure setStockData from props
@@ -20,13 +18,6 @@ const Slider = ({ setStockData }) => { // Destructure setStockData from props
 
   return (
     <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-      {/* <ButtonGroup  size="large" variant="outlined">
-        <Button onClick={() => fetchData('daily')}>Day</Button>
-        <Button onClick={() => fetchData('weekly')}>Week</Button>
-        <Button onClick={() => fetchData('monthly')}>Month</Button>
-        <Button onClick={() => fetchData('yearly')}>Year</Button>
-        
-      </ButtonGroup> */}
 
       <button onClick={() => fetchData('daily')} className=' button hover:bg-customColor hover:underline'> Day</button>
       <button onClick={() => fetchData('weekly')} className=' button hover:bg-customColor hover:underline'> Week</button>
