@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const stockSchema = new mongoose.Schema({
     ShareName : String,
-    remark : String,
-    link : String,
+    Remark : String,
+    Post_URL : String,
     dailyGain : Number,
     monthlyGain : Number,
     yearlyGain : Number,

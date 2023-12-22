@@ -1,0 +1,29 @@
+version: '3'
+services:
+  backend_logic:
+    build: .
+    ports:
+      - "3000:3000"  # Example port mapping
+    depends_on:
+      - mongodb  # Ensure MongoDB service starts first
+      - python_script
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/stock  # Replace with your MongoDB connection URI
+    volumes:
+      - shared_data:/usr/src/app/output  # Mount the shared volume in the backend logic service
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  python_script:
+    build: ./python_script
+    volumes:
+      - shared_data:/app  # Mount the shared volume in the Python script service
+
+volumes:
+  mongo_data:
+  shared_data:  # Define a named volume for sharing data between containers

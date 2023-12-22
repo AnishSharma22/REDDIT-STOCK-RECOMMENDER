@@ -16,4 +16,4 @@ To run backend
 -> node index.js
 
 
-This would run your project local;y given that you replace your own mongo URL.
+This would run your project locally given that you replace your own mongo URL.
