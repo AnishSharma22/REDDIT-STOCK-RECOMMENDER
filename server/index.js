@@ -13,7 +13,6 @@ dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 const MONGO_URI = process.env.MONGO_URI;
 const mongo_uri = MONGO_URI;
-
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
