@@ -5,7 +5,8 @@ import '../assets/slider.css'
 
 const Slider = ({ setStockData }) => { // Destructure setStockData from props
 
-  const backend_url = process.env.REACT_APP_BACKEND_URL || localhost;
+  const backend_url = import.meta.env.VITE_APP_BACKEND_URL || 'localhost';
+
 
   const fetchData = async (timeFrame) => {
     try {
@@ -21,7 +22,6 @@ const Slider = ({ setStockData }) => { // Destructure setStockData from props
 
   return (
     <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-
       <button onClick={() => fetchData('daily')} className=' button hover:bg-customColor hover:underline'> Day</button>
       <button onClick={() => fetchData('weekly')} className=' button hover:bg-customColor hover:underline'> Week</button>
       <button onClick={() => fetchData('monthly')} className=' button hover:bg-customColor hover:underline'> Month</button>
