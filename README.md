@@ -1,19 +1,47 @@
-# STOCK RECOMMENDER
+# REDDIT BASED STOCK RECOMMENDER
 
-This is a reddit based stock recommender that show all the hot stocks that are fetched from the top reddit posts and gives them a remark based on the sentiment of that share.
+This project is a Reddit-based stock recommender that showcases trending stocks
+sourced from top Reddit posts. It provides insights and sentiment analysis for each
+stock, offering a comprehensive overview of the market's most-discussed shares.
+
+## Local Setup Instructions
+
+### Frontend Setup
+1. Install the required packages:
+```bash
+npm install
+```
+
+```bash
+cd server
+```
+```bash
+npm install
+```
+2. Run the Frontend
+```bash
+npm run dev
+```
+3. Run the Backend
+```bash
+cd server
+node index.js
+```
+
+## Docker Setup 
+
+### Runningn backend with Docker
+1. Navigate to the server folder:
+```bash
+cd server
+```
+2. Start the backend with docker-compose:
+```bash
+docker-compose up
+```
 
 
-## Steps to set up locally
--> npm install (root dir)
--> cd server (server folder)
--> npm install 
 
-To run Frontend 
--> npm run dev (root dir)
-
-To run backend
--> cd server
--> node index.js
+Make sure to configure the .env.example file by renaming it to .env and providing the necessary credentials to ensure proper functionality of the backend.
 
 
-This would run your project local;y given that you replace your own mongo URL.
