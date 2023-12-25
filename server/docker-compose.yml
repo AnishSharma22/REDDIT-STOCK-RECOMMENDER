@@ -3,7 +3,7 @@ services:
   backend_logic:
     build: .
     ports:
-      - "3000:3000"  # Example port mapping
+      - "3000:3000"  # port mapping
     depends_on:
       - mongodb  # Ensure MongoDB service starts first
       - python_script
@@ -21,6 +21,7 @@ services:
 
   python_script:
     build: ./python_script
+    env_file: ../../.env  # Set environment variables from the .env file
     volumes:
       - shared_data:/app  # Mount the shared volume in the Python script service
 
