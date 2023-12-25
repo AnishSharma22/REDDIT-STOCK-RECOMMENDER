@@ -5,12 +5,12 @@ import '../assets/slider.css'
 
 const Slider = ({ setStockData }) => { // Destructure setStockData from props
 
-  const backend_url = import.meta.env.VITE_APP_BACKEND_URL || 'localhost';
+  const backend_url = import.meta.env.VITE_APP_BACKEND_URL || 'localhost:3000';
 
 
   const fetchData = async (timeFrame) => {
     try {
-      const dataRec = await axios.get(`http://${backend_url}:3000/backend/api?timeFrame=${timeFrame}`);
+      const dataRec = await axios.get(`https://${backend_url}/backend/api?timeFrame=${timeFrame}`);
       // Handle the received data here, e.g., set it to state or perform actions
       console.log(dataRec);
       setStockData(dataRec.data); // Assuming the data to set is in dataRec.data
