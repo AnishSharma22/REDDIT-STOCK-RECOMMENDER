@@ -1,0 +1,98 @@
+
+  .heading{
+    font-size: 4.35rem;
+    padding-left: 5.5rem;
+    padding-right: 5rem;
+    font-weight: bolder;
+    color: white;
+  }
+  .svg-button{
+    height: 10vh;
+    filter: drop-shadow(20);
+  }
+
+  .container{
+    text-align: center;
+    display: inline-block;
+    margin-left: 5.5rem;
+    border: 1px solid #D22618;
+    background-color: #D22618;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #D22618;
+    color: white;
+    background-color: #D22618;
+    border-radius: 20px;
+  }
+  .clicked-button{
+    background-color: white;
+    color: black;
+    font-weight: 500;
+    animation: fadeInAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+  }
+
+  .image {
+    width: 40px;
+    transform: rotate(180deg); /* Rotate the image 180 degrees */
+    color: white; /* Set the color to white */
+    filter: invert(100%);
+  }
+
+  .custom:hover .remark-pos {
+    color: #006400/* Your desired color */;
+  }
+  .custom:hover .remark-neg{
+    color : #8b0000;
+  }
+  .custom:hover .remark-neutral{
+    color: yellow;
+  }
+  
+ 
+  .image {
+    transition: transform 0.3s ease; /* Adds a smooth transition effect */
+  }
+  
+  .hover-effect:hover {
+    transform: rotate(180deg) scale(1.25); /* Rotates 180 degrees and scales by 1.25 on hover */
+  }
+
+  tbody tr {
+    transition: transform 0.3s ease; /* Adds a smooth transition effect */
+  }
+  
+  tbody tr:hover {
+    transform: scale(1.05); /* Set the transformation origin to the top-left corner */
+    border-collapse: collapse;
+    width: 100%; /* Ensure the table takes up the full width of its container */
+
+     /* Scales the row by 5% on hover */
+  }
+  .dataTable::-webkit-scrollbar {
+    background-color: transparent;
+    /* height: 4px; */
+  }
+  
+  

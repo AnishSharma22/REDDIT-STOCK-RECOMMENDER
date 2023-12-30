@@ -1,32 +1,85 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios'; 
-import '../assets/slider.css'
+import "../App.css";
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { buttonState, stockDataState } from '../store/atoms';
 
 
-const Slider = ({ setStockData }) => { // Destructure setStockData from props
+const Slider = () => { 
 
   const backend_url = import.meta.env.VITE_APP_BACKEND_URL || 'localhost:3000';
+  const setClicked = useSetRecoilState(buttonState);
+  const [clicked] = useRecoilState(buttonState);
+  const setStockData = useSetRecoilState(stockDataState);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const dataRec = await axios.get(`https://${backend_url}/backend/api?timeFrame=daily`);
+        console.log(dataRec);
+        setStockData(dataRec.data); 
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    fetchData(); // Call the fetchData function to initiate the data retrieval
+  
+  }, []);
+
 
 
   const fetchData = async (timeFrame) => {
     try {
       const dataRec = await axios.get(`https://${backend_url}/backend/api?timeFrame=${timeFrame}`);
-      // Handle the received data here, e.g., set it to state or perform actions
       console.log(dataRec);
-      setStockData(dataRec.data); // Assuming the data to set is in dataRec.data
+      setStockData(dataRec.data); 
     } catch (error) {
-      // Handle errors here
       console.error(error);
     }
   };
 
   return (
-    <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-      <button onClick={() => fetchData('daily')} className=' button hover:bg-customColor hover:underline'> Day</button>
-      <button onClick={() => fetchData('weekly')} className=' button hover:bg-customColor hover:underline'> Week</button>
-      <button onClick={() => fetchData('monthly')} className=' button hover:bg-customColor hover:underline'> Month</button>
-      <button onClick={() => fetchData('yearly')} className=' button hover:bg-customColor hover:underline'> Year</button>
+    <>
+        <div className="container w-auto">
+      <button
+        className={`button${clicked === 'daily' ? ' clicked-button' : ''}`}
+        onClick={() => {
+          fetchData('daily');
+          setClicked('daily');
+        }}
+      >
+        Day
+      </button>
+      <button
+        className={`button${clicked === 'weekly' ? ' clicked-button' : ''}`}
+        onClick={() => {
+          fetchData('weekly');
+          setClicked('weekly');
+        }}
+      >
+        Week
+      </button>
+      <button
+        className={`button${clicked === 'monthly' ? ' clicked-button' : ''}`}
+        onClick={() => {
+          fetchData('monthly');
+          setClicked('monthly');
+        }}
+      >
+        Month
+      </button>
+      <button
+        className={`button${clicked === 'yearly' ? ' clicked-button' : ''}`}
+        onClick={() => {
+          fetchData('yearly');
+          setClicked('yearly');
+        }}
+      >
+        Year
+      </button>
     </div>
+    </>
   );
 };
 

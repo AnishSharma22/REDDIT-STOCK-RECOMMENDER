@@ -11,7 +11,8 @@ export default {
         posRowColor : '#00ff004d',
         negRowColor : '#ff000057',
         posHoverColor: '#00ff007a',
-        negHoverColor: '#ff000078'
+        negHoverColor: '#ff000078',
+        hoverColor:'#D22618',
       },
     },
   },
